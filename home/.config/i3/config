@@ -1,11 +1,15 @@
+# Set variables
+set $mod Mod4
+set $terminal alacritty
+
 # Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always ~/.config/polybar/launch.sh
 
 # Picom windows compositor
-exec_always --no-startup-id picom -b
+exec_always picom -b
 
 # Wallpaper
-exec_always --no-startup-id feh --no-fehbg --bg-fill ~/.wallpapers/ctulhu.jpg
+exec feh --no-fehbg --bg-fill ~/wallpapers/retrowave.jpg
 
 # No window titles/borders
 default_border pixel 0
@@ -15,30 +19,21 @@ gaps outer 1
 gaps inner 4
 
 # Keyboard locales
-exec_always setxkbmap -layout us,ru -option grp:alt_shift_toggle -option caps:escape
+exec setxkbmap -layout us,ru -option grp:alt_shift_toggle -option caps:escape
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
 
 # Brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-
-# Screnshots
-bindsym Print exec --no-startup-id flameshot gui
-
-set $mod Mod4
-set $terminal alacritty
-
-# Font for window titles
-font pango:DejaVu Sans Mono 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

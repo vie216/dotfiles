@@ -15,19 +15,16 @@ SAVEHIST=1000
 setopt HIST_IGNORE_DUPS
 
 # Setup PATH
-source ~/.cargo/env
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
-# Theme and plugins
-eval "$(starship init zsh)"
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Customize prompt
+PS1='%B%F{blue}%C%f %F{green}>%f%b '
+
+# Enable plugins
+source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Aliases
-alias install="sudo apt install"
-alias remove="sudo apt autoremove --purge"
-alias update="sudo apt update"
-alias upgrade="sudo apt upgrade"
-
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -37,12 +34,12 @@ alias ll="exa -l"
 alias la="exa -a"
 alias asl="exa -la"
 
-alias cb="cargo build"
-alias cr="cargo run"
-alias cbr="cargo build -r"
-alias crr="cargo run -r"
-
 alias md="mkdir"
 alias rd="rm -r"
 alias e="emacs"
 alias t="trans"
+
+alias cb="cargo build"
+alias cr="cargo run"
+alias cbr="cargo build -r"
+alias crr="cargo run -r"
