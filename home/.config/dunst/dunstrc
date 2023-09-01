@@ -1,0 +1,33 @@
+[global]
+	frame_width = 0
+	frame_color = "#abb2bf"
+	separator_color = frame
+
+	# Text
+	font = SF Pro Display 11
+	format = "<b>%s %p</b>\n%b\n%p"
+	alignment = center
+	show_age_threshold = 60
+
+[shortcuts]
+	close = ctrl+space
+	close_all = ctrl+shift+space
+	history = ctrl+mod1+j
+
+[urgency_low]
+	msg_urgency = low
+	background = "#282c34"
+	foreground = "#abb2bf"
+	timeout = 4
+
+[urgency_normal]
+	msg_urgency = normal
+	background = "#282c34"
+	foreground = "#abb2bf"
+	timeout = 4
+
+[urgency_critical]
+	msg_urgency = critical
+	background = "#282c34"
+	foreground = "#d08770"
+	timeout = 20

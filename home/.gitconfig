@@ -1,0 +1,9 @@
+[user]
+	name = vie
+	email = vie.devr@gmail.com
+[credential]
+	helper = store
+[color]
+	ui = true
+[core]
+	editor = emacs
