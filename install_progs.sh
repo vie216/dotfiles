@@ -19,4 +19,5 @@ mv ./trans ~/.local/bin/
 sudo pacman -R wget
 
 rustup install stable
+rustup component add rust-analyzer
 ~/.cargo/bin/cargo install exa
