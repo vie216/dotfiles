@@ -9,7 +9,7 @@ exec_always ~/.config/polybar/launch.sh
 exec_always picom -b
 
 # Wallpaper
-exec feh --no-fehbg --bg-fill ~/wallpapers/retrowave.jpg
+exec feh --no-fehbg --bg-fill ~/wallpapers/cyberpunk-landscape.jpg
 
 # No window titles/borders
 default_border pixel 0

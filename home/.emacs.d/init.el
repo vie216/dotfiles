@@ -3,10 +3,9 @@
 (custom-set-variables
  '(custom-enabled-themes '(atom-one-dark))
  '(custom-safe-themes
-   '("0c860c4fe9df8cff6484c54d2ae263f19d935e4ff57019999edbda9c7eda50b8" default))
- '(package-selected-packages '(multiple-cursors smex magit treemacs
-                               company yasnippet eglot rust-mode cargo
-                               atom-one-dark-theme)))
+   '("f366d4bc6d14dcac2963d45df51956b2409a15b770ec2f6d730e73ce0ca5c8a7" "0c860c4fe9df8cff6484c54d2ae263f19d935e4ff57019999edbda9c7eda50b8" default))
+ '(package-selected-packages
+   '(multiple-cursors smex magit treemacs company yasnippet eglot rust-mode cargo atom-one-dark-theme zenburn-theme)))
 (custom-set-faces
  '(default ((t (:height 145)))))
 
@@ -38,6 +37,10 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+
+;; Enable transparent background
+(set-frame-parameter nil 'alpha-background 90)
+(add-to-list 'default-frame-alist '(alpha-background . 90))
 
 ;; Disable creating backup files
 (setq make-backup-files nil)

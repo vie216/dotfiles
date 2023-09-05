@@ -4,11 +4,11 @@ window:
 
   opacity: 0.8
 
-# Colors - https://github.com/olimorris/onedarkpro.nvim
+# Some colors are from https://github.com/olimorris/onedarkpro.nvim
 colors:
   primary:
-    background: '#282c34'
-    foreground: '#abb2bf'
+    background: '#20202f'
+    foreground: '#afafbf'
 
   normal:
     black:      '#282c34'
@@ -32,11 +32,11 @@ colors:
 
   cursor:
     text: CellBackground
-    cursor: CellForeground # syntax-cursor-color
+    cursor: CellForeground
 
   selection:
     text: CellForeground
-    background: '#5c6370'
+    background: '#8f8f9f'
 
 cursor:
   style:
