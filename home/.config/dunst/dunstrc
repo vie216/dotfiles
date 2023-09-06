@@ -1,6 +1,6 @@
 [global]
 	frame_width = 0
-	frame_color = "#abb2bf"
+	frame_color = "#8fc6f4"
 	separator_color = frame
 
 	# Text
@@ -16,18 +16,18 @@
 
 [urgency_low]
 	msg_urgency = low
-	background = "#282c34"
-	foreground = "#abb2bf"
+	background = "#20202f"
+	foreground = "#afafbf"
 	timeout = 4
 
 [urgency_normal]
 	msg_urgency = normal
-	background = "#282c34"
-	foreground = "#abb2bf"
+	background = "#20202f"
+	foreground = "#afafbf"
 	timeout = 4
 
 [urgency_critical]
 	msg_urgency = critical
-	background = "#282c34"
+	background = "#20202f"
 	foreground = "#d08770"
 	timeout = 20

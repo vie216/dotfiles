@@ -1,9 +1,9 @@
 * {
 	background-color:       transparent;
 
-	background:             #282c34;
-	background-transparent: #282c34cc;
-	foreground:             #abb2bf;
+	background:             #20202f;
+	background-transparent: #20202fcc;
+	foreground:             #afafbf;
 	selected:               #a1624f;
 }
 
