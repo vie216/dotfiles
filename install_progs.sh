@@ -6,7 +6,7 @@ sudo pacman -Sy
 sudo pacman -S xorg xorg-xinit i3 \
      ly polybar picom dunst rofi \
      brightnessctl bluez bluez-utils wget \
-     alacritty emacs rustup \
+     alacritty emacs firefox rustup \
      zsh zsh-autosuggestions zsh-syntax-highlighting
 
 sudo systemctl enable ly.service bluetooth.service
@@ -14,10 +14,13 @@ sudo systemctl start bluetooth.service
 
 wget git.io/trans
 chmod +x ./trans
-md -p ~/.local/bin/
+mkdir -p ~/.local/bin/
 mv ./trans ~/.local/bin/
-sudo pacman -R wget
+sudo pacman -Rssn wget
+rm ~/.wget-hsts
 
 rustup install stable
 rustup component add rust-analyzer
-~/.cargo/bin/cargo install exa
+cargo install exa
+
+chsh -s `which zsh` vie
