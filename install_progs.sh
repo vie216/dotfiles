@@ -4,7 +4,7 @@ set -xe
 
 sudo pacman -Sy
 sudo pacman -S xorg xorg-xinit i3 \
-     ly polybar picom dunst rofi \
+     ly polybar picom dunst rofi feh \
      brightnessctl bluez bluez-utils wget \
      alacritty emacs firefox rustup \
      zsh zsh-autosuggestions zsh-syntax-highlighting
