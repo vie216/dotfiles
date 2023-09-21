@@ -5,7 +5,7 @@ window:
   opacity: 0.8
 
 import:
-  - /home/vie/.config/alacritty/themes/black-hole.yml
+  - /home/vie/.config/alacritty/themes/syu-helena.yml
 
 cursor:
   style:

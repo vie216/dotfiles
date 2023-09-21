@@ -12,7 +12,7 @@ configuration {
 	terminal: "alacritty";
 }
 
-@theme "/home/vie/.config/rofi/themes/black-hole.rasi"
+@theme "/home/vie/.config/rofi/themes/syu-helena.rasi"
 
 listview {
 	lines: 16;

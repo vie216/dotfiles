@@ -1,4 +1,4 @@
-# Needed for plugins
+# Needed for themes
 autoload -Uz compinit && compinit -D
 
 # Case-insensitive completion
@@ -18,7 +18,7 @@ setopt HIST_IGNORE_DUPS
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 # Customize prompt
-PS1='%B%F{blue}%C%f %F{green}>%f%b '
+PS1='%B%F{blue}%C%f %F{cyan}>%f%b '
 
 # Enable plugins
 source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"

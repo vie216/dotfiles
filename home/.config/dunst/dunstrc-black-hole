@@ -29,5 +29,5 @@
 [urgency_critical]
 	msg_urgency = critical
 	background = "#181828"
-	foreground = "#d08770"
+	foreground = "#d86c70"
 	timeout = 20

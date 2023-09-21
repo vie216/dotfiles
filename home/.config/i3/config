@@ -9,17 +9,18 @@ exec_always ~/.config/polybar/launch.sh
 exec_always picom -b
 
 # Wallpaper
-exec feh --no-fehbg --bg-fill ~/wallpapers/cyberpunk-landscape.jpg
+exec_always feh --no-fehbg --bg-fill ~/wallpapers/arch-chan_to.png
 
-# No window titles/borders
+# Window borders
 default_border pixel 0
 
 # Gaps
-gaps outer 1
-gaps inner 4
+gaps outer 0
+gaps inner 8
+smart_gaps off
 
 # Keyboard locales
-exec setxkbmap -layout us,ru -option grp:alt_shift_toggle -option caps:escape
+exec_always setxkbmap -layout us,ru -option grp:alt_shift_toggle -option caps:escape
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
@@ -35,18 +36,22 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# Start a terminal
+# Terminal emulator
 bindsym $mod+Return exec $terminal
+
+# Rofi (a program launcher)
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+shift+d exec rofi -show run
+bindsym $mod+Tab exec rofi -show window
+
+# Flameshot (screenshots)
+bindsym Print exec flameshot gui
 
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# Start rofi (a program launcher)
-bindsym $mod+d exec rofi -show drun
-bindsym $mod+shift+d exec rofi -show run
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
 # Move focus
 bindsym $mod+Left focus left
