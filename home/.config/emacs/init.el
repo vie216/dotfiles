@@ -9,6 +9,10 @@
 (custom-set-faces
  '(default ((t (:height 145)))))
 
+;; Enable some keybindings
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
 ;; Disable startup screen
 (setq inhibit-startup-screen t)
 
