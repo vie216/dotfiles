@@ -43,8 +43,8 @@
 (scroll-bar-mode -1)
 
 ;; Enable transparent background
-(set-frame-parameter nil 'alpha-background 90)
-(add-to-list 'default-frame-alist '(alpha-background . 90))
+(set-frame-parameter nil 'alpha-background 95)
+(add-to-list 'default-frame-alist '(alpha-background . 95))
 
 ;; Disable creating backup files
 (setq make-backup-files nil)
