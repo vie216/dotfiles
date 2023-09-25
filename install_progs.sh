@@ -25,3 +25,5 @@ rustup component add rust-analyzer
 cargo install exa
 
 chsh -s `which zsh` vie
+
+systemctl --user --now enable pipewire pipewire-pulse pipewire-media-session
