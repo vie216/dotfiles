@@ -7,7 +7,8 @@ sudo pacman -S xorg xorg-xinit i3 \
      ly polybar picom dunst rofi feh \
      brightnessctl bluez bluez-utils wget \
      alacritty emacs firefox rustup flameshot \
-     zsh zsh-autosuggestions zsh-syntax-highlighting
+     zsh zsh-autosuggestions zsh-syntax-highlighting \
+     pipewire pipewire-jack pipewire-alsa pipewire-pulse
 
 sudo systemctl enable ly.service bluetooth.service
 sudo systemctl start bluetooth.service
