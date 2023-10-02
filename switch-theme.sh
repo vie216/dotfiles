@@ -2,7 +2,7 @@
 
 if [ $# -eq 0 ]
   then
-      echo "Please, specify new theme name"
+      echo "Please specify new theme name"
       exit 1
 fi
 

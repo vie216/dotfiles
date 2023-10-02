@@ -9,7 +9,7 @@ exec_always ~/.config/polybar/launch.sh
 exec_always picom -b
 
 # Wallpaper
-exec_always feh --no-fehbg --bg-fill ~/wallpapers/arch-chan_to.png
+exec_always feh --no-fehbg --bg-fill ~/wallpapers/ctulhu-4.jpg
 
 # Window borders
 default_border pixel 0
