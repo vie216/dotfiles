@@ -1,96 +1,79 @@
 (require 'package)
-
+(package-initialize)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 (custom-set-variables
  '(custom-enabled-themes '(atom-one-dark))
  '(custom-safe-themes
-   '("f366d4bc6d14dcac2963d45df51956b2409a15b770ec2f6d730e73ce0ca5c8a7" "0c860c4fe9df8cff6484c54d2ae263f19d935e4ff57019999edbda9c7eda50b8" default))
+   '("821c37a78c8ddf7d0e70f0a7ca44d96255da54e613aa82ff861fe5942d3f1efc" "3074fda75f35f990d112fb75681729a74b6c7f15d3e5dfcf80313abb4cd39ed8" "f366d4bc6d14dcac2963d45df51956b2409a15b770ec2f6d730e73ce0ca5c8a7" "0c860c4fe9df8cff6484c54d2ae263f19d935e4ff57019999edbda9c7eda50b8" default))
  '(package-selected-packages
-   '(multiple-cursors smex magit treemacs company yasnippet eglot rust-mode cargo atom-one-dark-theme zenburn-theme)))
+   '(multiple-cursors ido-completing-read+ amx magit treemacs company use-package atom-one-dark-theme zenburn-theme timu-spacegrey-theme tron-legacy-theme)))
 (custom-set-faces
  '(default ((t (:height 145)))))
 
-;; Enable some keybindings
-(put 'downcase-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
-
-;; Disable startup screen
+;; Make it look nice
 (setq inhibit-startup-screen t)
-
-;; Enable line numbers
-(global-display-line-numbers-mode t)
-(setq display-line-numbers-type 'relative)
-
-;; Set spaces intead of tabs
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-
-;; Switching between windows via Alt + ArrowKeys
-(when (fboundp 'windmove-default-keybindings)
-  (windmove-default-keybindings 'meta))
-
-;; Use UTF-8 by default
-(prefer-coding-system 'utf-8)
-
-;; Highlight current line
-(global-hl-line-mode t)
-
-;; Highlight parens pair under cursor
-(show-paren-mode t)
-
-;; Disable menubar, toolbar and scrollbar
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(prefer-coding-system 'utf-8)
 
-;; Enable transparent background
+(global-hl-line-mode t)
+(show-paren-mode t)
+(global-display-line-numbers-mode t)
+(setq display-line-numbers-type 'relative)
+(setq cursor-type 'box)
+
 (set-frame-parameter nil 'alpha-background 95)
 (add-to-list 'default-frame-alist '(alpha-background . 95))
 
-;; Disable creating backup files
-(setq make-backup-files nil)
+;; Add convenient bindings
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings 'meta))
 
-;; Automatically delete trailing whitespaces on save
+;; Add some functionality
+(setq-default indent-tabs-mode nil)
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; Setup multiple cursors
-(require 'multiple-cursors)
+;; Setup plugins and themes
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
 
-(global-set-key (kbd "C-.") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-,") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c ,") 'mc/mark-all-like-this)
-(define-key mc/keymap (kbd "<return>") nil)
+(use-package timu-spacegrey-theme
+  :config
+  (load-theme 'timu-spacegrey t))
 
-;; Setup advanced minibar completion
-(require 'smex)
+(use-package multiple-cursors
+  :bind (("C-." . mc/mark-next-like-this)
+         ("C-," . mc/mark-previous-like-this)
+         ("C-c ," . mc/mark-all-like-this)
+         :map mc/keymap ("<return>" . nil)))
 
-(smex-initialize)
+(use-package ido-completing-read+
+  :config
+  (ido-mode t)
+  (ido-everywhere t)
+  (ido-ubiquitous-mode t))
 
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "C-c M-x") 'execute-extended-command)
+(use-package amx
+  :config
+  (amx-mode t))
 
-;; Setup file browser
-(require 'treemacs)
+(use-package magit
+  :config
+  (setq magit-completing-read-function 'magit-ido-completing-read))
 
-(global-set-key (kbd "C-x t t") 'treemacs)
-(global-set-key (kbd "C-x t d") 'treemacs-select-directory)
+(use-package treemacs
+  :config
+  (treemacs-resize-icons 20)
+  :bind (("C-x t t" . treemacs)
+         ("C-x t d" . treemacs-select-directory)))
 
-(treemacs-resize-icons 20)
-
-;; Setup lsp
-(require 'company)
-(require 'yasnippet)
-(require 'eglot)
-(require 'rust-mode)
-
-(global-set-key "\t" 'company-indent-or-complete-common)
-
-(add-hook 'after-init-hook 'global-company-mode)
-(add-hook 'rust-mode-hook 'eglot-ensure)
-
-(add-to-list 'company-backends 'company-dabbrev)
-
-(setq rust-format-on-save t)
-
-(add-to-list 'exec-path "~/.cargo/bin")
+(use-package company
+  :config
+  (add-to-list 'company-backends 'company-dabbrev)
+  (global-company-mode)
+  :bind (("<tab>" . company-indent-or-complete-common)))
