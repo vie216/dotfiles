@@ -40,6 +40,17 @@
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+(defun dupline ()
+  (interactive)
+  (save-excursion
+    (kill-ring-save
+     (line-beginning-position)
+     (+ (line-end-position) 1))
+    (beginning-of-line)
+    (yank)))
+
+(global-set-key (kbd "C-M-d") 'dupline)
+
 ;; Setup plugins and themes
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
@@ -51,9 +62,13 @@
 (use-package multiple-cursors
   :bind (("C-." . mc/mark-next-like-this)
          ("C-," . mc/mark-previous-like-this)
-         ("C-c ," . mc/mark-all-like-this)
-         :map
-         mc/keymap ("<return>" . nil)))
+         ("C-c ," . mc/mark-all-like-this)))
+
+(use-package multiple-cursors-core
+  :ensure nil
+  :bind
+  (:map mc/keymap
+        ("<return>" . nil)))
 
 (use-package ido-completing-read+
   :config
