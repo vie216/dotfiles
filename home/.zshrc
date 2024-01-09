@@ -1,21 +1,18 @@
-# Needed for themes
+# Setup completion
 autoload -Uz compinit && compinit -D
+zstyle ':completion:*' matcher-list 'm:{a-za-z}={a-za-z}'
+zstyle ':completion:*' menu select
 
-# Case-insensitive completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
-# Navigation by words with Ctrl+Arrows
+# Make navigation more convenient
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey -e
 
-# History saving
+# Setup history saving
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 setopt HIST_IGNORE_DUPS
-
-# Setup PATH
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 # Customize prompt
 PS1='%B%F{blue}%C%f %F{cyan}>%f%b '
@@ -29,17 +26,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias ls="exa"
-alias ll="exa -l"
-alias la="exa -a"
-alias asl="exa -la"
-
+alias ls="ls --color"
+alias ll="ls -l"
+alias la="ls -a"
+alias asl="ls -la"
 alias md="mkdir"
 alias rd="rm -r"
-alias e="emacs"
-alias t="trans"
-
-alias cb="cargo build"
-alias cr="cargo run"
-alias cbr="cargo build -r"
-alias crr="cargo run -r"
