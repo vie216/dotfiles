@@ -7,7 +7,7 @@ sudo pacman -S xorg xorg-xinit ly picom dunst feh brightnessctl bluez bluez-util
      pipewire pipewire-audio pipewire-jack pipewire-pulse wireplumber \
      emacs firefox zsh zsh-autosuggestions zsh-syntax-highlighting
 
-sudo systemctl enable ly.service bluetooth.service
+sudo systemctl enable ly bluetooth
 sudo systemctl start bluetooth.service
 systemctl --user --now enable pipewire pipewire-pulse
 

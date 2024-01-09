@@ -1,9 +1,8 @@
 [global]
 	frame_width = 0
-	frame_color = "#8fc6f4"
+	frame_color = "#9c71d9"
 	separator_color = frame
 
-	# Text
 	font = SF Pro Display 11
 	format = "<b>%s %p</b>\n%b\n%p"
 	alignment = center
@@ -16,18 +15,18 @@
 
 [urgency_low]
 	msg_urgency = low
-	background = "#1a1b26"
-	foreground = "#aea0cb"
+	background = "#14171e"
+	foreground = "#a6aadc"
 	timeout = 4
 
 [urgency_normal]
 	msg_urgency = normal
-	background = "#1a1b26"
-	foreground = "#aea0cb"
+	background = "#14171e"
+	foreground = "#a6aadc"
 	timeout = 4
 
 [urgency_critical]
 	msg_urgency = critical
-	background = "#1a1b26"
+	background = "#14171e"
 	foreground = "#ddae6c"
 	timeout = 20
