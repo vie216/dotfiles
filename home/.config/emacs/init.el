@@ -4,7 +4,7 @@
 
 (custom-set-variables
  '(custom-safe-themes
-   '("821c37a78c8ddf7d0e70f0a7ca44d96255da54e613aa82ff861fe5942d3f1efc" "3074fda75f35f990d112fb75681729a74b6c7f15d3e5dfcf80313abb4cd39ed8" "f366d4bc6d14dcac2963d45df51956b2409a15b770ec2f6d730e73ce0ca5c8a7" "0c860c4fe9df8cff6484c54d2ae263f19d935e4ff57019999edbda9c7eda50b8" default))
+   '("821c37a78c8ddf7d0e70f0a7ca44d96255da54e613aa82ff861fe5942d3f1efc" "3074fda75f35f990d112fb75681729a74b6c7f15d3e5dfcf80313abb4cd39ed8" "18cf5d20a45ea1dff2e2ffd6fbcd15082f9aa9705011a3929e77129a971d1cb3" "0c860c4fe9df8cff6484c54d2ae263f19d935e4ff57019999edbda9c7eda50b8" default))
  '(package-selected-packages
    '(multiple-cursors ido-completing-read+ amx magit treemacs company use-package xclip atom-one-dark-theme zenburn-theme timu-spacegrey-theme tron-legacy-theme)))
 (custom-set-faces
@@ -52,7 +52,28 @@
     (beginning-of-line)
     (yank)))
 
+(defun moveline (n)
+  (interactive "p")
+  (setq col (current-column))
+  (beginning-of-line) (setq start (point))
+  (end-of-line) (forward-char) (setq end (point))
+  (let ((line-text (delete-and-extract-region start end)))
+    (forward-line n)
+    (insert line-text)
+    (forward-line -1)
+    (forward-char col)))
+
+(defun upline ()
+  (interactive)
+  (moveline -1))
+
+(defun downline ()
+  (interactive)
+  (moveline 1))
+
 (global-set-key (kbd "C-M-d") 'dupline)
+(global-set-key (kbd "C-M-<up>") 'upline)
+(global-set-key (kbd "C-M-<down>") 'downline)
 (global-set-key (kbd "C-w") 'clipboard-kill-region)
 (global-set-key (kbd "M-w") 'clipboard-kill-ring-save)
 (global-set-key (kbd "C-y") 'clipboard-yank)
