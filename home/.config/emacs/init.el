@@ -19,8 +19,8 @@
 
 (global-hl-line-mode t)
 (show-paren-mode t)
-(global-display-line-numbers-mode t)
-(setq display-line-numbers-type 'relative)
+;;(global-display-line-numbers-mode t)
+;;(setq display-line-numbers-type 'relative)
 (setq cursor-type 'box)
 
 (set-frame-parameter nil 'alpha-background 90)
