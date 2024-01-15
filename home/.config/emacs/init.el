@@ -6,7 +6,7 @@
  '(custom-safe-themes
    '("821c37a78c8ddf7d0e70f0a7ca44d96255da54e613aa82ff861fe5942d3f1efc" "3074fda75f35f990d112fb75681729a74b6c7f15d3e5dfcf80313abb4cd39ed8" "18cf5d20a45ea1dff2e2ffd6fbcd15082f9aa9705011a3929e77129a971d1cb3" "0c860c4fe9df8cff6484c54d2ae263f19d935e4ff57019999edbda9c7eda50b8" default))
  '(package-selected-packages
-   '(multiple-cursors ido-completing-read+ amx magit treemacs company use-package xclip atom-one-dark-theme zenburn-theme timu-spacegrey-theme tron-legacy-theme)))
+   '(multiple-cursors ido-completing-read+ amx magit treemacs company use-package xclip markdown-mode atom-one-dark-theme zenburn-theme timu-spacegrey-theme tron-legacy-theme)))
 (custom-set-faces
  '(default ((t (:height 125)))))
 
@@ -23,8 +23,8 @@
 ;;(setq display-line-numbers-type 'relative)
 (setq cursor-type 'box)
 
-(set-frame-parameter nil 'alpha-background 90)
-(add-to-list 'default-frame-alist '(alpha-background . 90))
+(set-frame-parameter nil 'alpha-background 80)
+(add-to-list 'default-frame-alist '(alpha-background . 80))
 
 ;; Add some convenient functionality
 (put 'downcase-region 'disabled nil)
@@ -148,3 +148,5 @@
 (use-package atom-one-dark-theme
   :config
   (load-theme 'atom-one-dark t))
+
+(use-package markdown-mode)

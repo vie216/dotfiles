@@ -1,6 +1,6 @@
 # Setup completion
 autoload -Uz compinit && compinit -D
-zstyle ':completion:*' matcher-list 'm:{a-za-z}={a-za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
 # Make navigation more convenient
@@ -15,7 +15,7 @@ SAVEHIST=1000
 setopt HIST_IGNORE_DUPS
 
 # Customize prompt
-PS1='%B%F{blue}%C%f %F{cyan}>%f%b '
+PS1='%B%F{blue}%C%f %F{5}>%f%b '
 
 # Enable plugins
 source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
