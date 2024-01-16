@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 
 set -xe
 
@@ -6,7 +6,7 @@ sudo pacman -Syu
 sudo pacman -S xorg xorg-xinit ly picom dunst feh brightnessctl bluez bluez-utils \
      pipewire pipewire-audio pipewire-jack pipewire-pulse wireplumber \
      emacs firefox zsh zsh-autosuggestions zsh-syntax-highlighting \
-     telegram-desktop discord flameshot unzip
+     telegram-desktop discord flameshot unzip man-pages
 
 sudo systemctl enable ly bluetooth
 sudo systemctl start bluetooth.service

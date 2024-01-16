@@ -23,8 +23,8 @@
 ;;(setq display-line-numbers-type 'relative)
 (setq cursor-type 'box)
 
-(set-frame-parameter nil 'alpha-background 80)
-(add-to-list 'default-frame-alist '(alpha-background . 80))
+(set-frame-parameter nil 'alpha-background 100)
+(add-to-list 'default-frame-alist '(alpha-background . 100))
 
 ;; Add some convenient functionality
 (put 'downcase-region 'disabled nil)
