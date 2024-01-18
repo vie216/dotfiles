@@ -3,7 +3,7 @@
 set -xe
 
 sudo pacman -Syu
-sudo pacman -S xorg xorg-xinit ly picom dunst feh brightnessctl bluez bluez-utils \
+sudo pacman -S xorg xorg-xinit ly picom dunst feh brightnessctl bluez bluez-utils playerctl \
      pipewire pipewire-audio pipewire-jack pipewire-pulse wireplumber \
      emacs firefox zsh zsh-autosuggestions zsh-syntax-highlighting \
      telegram-desktop discord flameshot unzip man-pages neofetch make
