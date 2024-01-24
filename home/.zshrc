@@ -15,7 +15,7 @@ SAVEHIST=1000
 setopt HIST_IGNORE_DUPS
 
 # Customize prompt
-PS1='%B%F{blue}%C%f %F{5}>%f%b '
+PS1='%B%F{5}%C%f %F{blue}>%f%b '
 
 # Enable plugins
 source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
