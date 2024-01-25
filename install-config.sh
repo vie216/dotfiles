@@ -7,5 +7,5 @@ ln -s $HOME/dotfiles/home/.zshrc $HOME/.zshrc || true
 ln -s $HOME/dotfiles/home/.xinitrc $HOME/.xinitrc || true
 ln -s $HOME/dotfiles/home/.config/dunst $HOME/.config/dunst || true
 ln -s $HOME/dotfiles/home/.config/emacs/init.el $HOME/.config/emacs/init.el || true
-ln -s $HOME/dotfiles/home/.config/neofetch $HOME/.config/neofetch || true
+ln -s $HOME/dotfiles/home/.config/uwufetch $HOME/.config/uwufetch || true
 ln -s $HOME/dotfiles/home/.config/picom.conf $HOME/.config/picom.conf || true
