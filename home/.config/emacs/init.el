@@ -80,6 +80,16 @@
 
 (setq tab-always-indent 'complete)
 
+;; Major mode for my own programming language Nob
+(define-generic-mode 'nob-mode
+  '("#")
+  '("let" "if" "else")
+  '(("let[[:space:]]+\\([a-zA-Z0-9_]+\\)" 1 font-lock-variable-name-face)
+    ("[,(][[:space:]]*\\([a-zA-Z0-9_]+\\)" 1 font-lock-variable-name-face)
+    (":[[:space:]]*\\([a-zA-Z0-9_]+\\)[[:space:]]*[,)=]" 1 font-lock-type-face))
+  '("*.nob" "*.nb")
+  nil)
+
 ;; Setup plugins and themes
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
