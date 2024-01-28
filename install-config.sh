@@ -9,3 +9,5 @@ ln -s $HOME/dotfiles/home/.config/dunst $HOME/.config/dunst || true
 ln -s $HOME/dotfiles/home/.config/emacs/init.el $HOME/.config/emacs/init.el || true
 ln -s $HOME/dotfiles/home/.config/uwufetch $HOME/.config/uwufetch || true
 ln -s $HOME/dotfiles/home/.config/picom.conf $HOME/.config/picom.conf || true
+ln -s $HOME/dotfiles/home/.config/user-dirs.dirs $HOME/.config/user-dirs.dirs || true
+ln -s $HOME/dotfiles/home/.config/user-dirs.locale $HOME/.config/user-dirs.locale || true
