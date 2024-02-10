@@ -6,7 +6,8 @@ sudo pacman -Syu
 sudo pacman -S xorg xorg-xinit ly picom dunst feh brightnessctl bluez bluez-utils playerctl \
      pipewire pipewire-audio pipewire-jack pipewire-pulse wireplumber \
      emacs firefox zsh zsh-autosuggestions zsh-syntax-highlighting \
-     telegram-desktop discord flameshot unzip man-pages uwufetch make
+     telegram-desktop discord flameshot unzip man-pages uwufetch make \
+     nvidia nvidia-prime
 
 sudo systemctl enable ly bluetooth
 sudo systemctl start bluetooth.service
